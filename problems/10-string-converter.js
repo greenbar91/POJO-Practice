@@ -12,8 +12,21 @@ console.log(stringConverter("raccoon")); // => {r: 1, a: 1, c: 2, o: 2, n: 1}
 ***********************************************************************/
 
 function stringConverter(string) {
-  // Your code here 
+  let charCounts = {};
+
+  for (const char of string){
+    if (charCounts[char]){
+      charCounts[char]++
+    } else {
+      charCounts[char] = 1
+    }
+
+  }
+  return charCounts
 }
+
+console.log(stringConverter("apple")); // => {a: 1, p: 2, l: 1, e: 1}
+console.log(stringConverter("banana")); // => {b: 1, a: 3, n: 2}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = stringConverter;

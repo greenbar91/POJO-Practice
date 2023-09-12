@@ -1,7 +1,7 @@
 /***********************************************************************
-Write a function `appleCounter(appleObj)` that takes in an object containing a 
+Write a function `appleCounter(appleObj)` that takes in an object containing a
 number of keys that have the word 'apple' contained within them. The `appleCounter`
-function will be in charge of returning the number of keys that contain the word 
+function will be in charge of returning the number of keys that contain the word
 "apple".
 
 **Hint**: you may want to take all the keys and lower case them for easier
@@ -27,10 +27,38 @@ let obj3 = {
 };
 appleCounter(obj3); // => 3
 ***********************************************************************/
+let obj3 = {
+  crabApple: "yum!",
+  honeyApple: "super yum",
+  banana: "yay",
+  bigapple: "NYC"
+};
+
 
 function appleCounter(appleObj) {
-  // Your code here 
+  let result = []
+  let count = 0
+  let keys = Object.keys(appleObj)
+
+  for (keys in appleObj){
+    result.push(keys.toLowerCase())
+
+  }
+    for (let i = 0; i < result.length; i++){
+      if(result[i].includes('apple')){
+        count++
+      }
+    }
+
+
+
+
+
+console.log( count)
 }
+
+(appleCounter(obj3))
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = appleCounter;

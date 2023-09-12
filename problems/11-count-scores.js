@@ -26,10 +26,32 @@ let peeps = [
 ];
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
+let ppl = [{name: "Anthony", score: 10},
+            {name: "Fred", score : 10},
+            {name: "Anthony", score: -8},
+            {name: "Winnie", score: 12}];
 
 function countScores(people) {
-  // Your code here 
+  const scores = {};
+  let keys = Object.keys(people)
+
+
+  for (const person of people) {
+    const { name, score } = person;
+
+    if (scores[name]) {
+      scores[name] += score;
+    } else {
+      scores[name] = score;
+    }
+  }
+
+  return scores;
 }
+
+
+
+console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;
